@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Cadastro</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<p:panelGrid>
+			<h:outputLabel for="nomeProduto" value="Nome do produto:"
+				style="font-weight:bold" />
+			<p:inputText id="nomeProduto"
+				value="#{produtoCadastroBean.model.nomeProduto}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel for="precoUnitario" value="Preço unitario"
+				style="font-weight:bold" />
+			<p:inputText id="precoUnitario" type="number"
+				value="#{produtoCadastroBean.model.precoUnitario}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel for="quantidadePorUnidade"
+				value="Quantidade por unidade:" style="font-weight:bold" />
+			<p:inputText id="quantidadePorUnidade" maxlength="20"
+				value="#{produtoCadastroBean.model.quantidadePorUnidade}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel value="Unidades em estoque:" style="font-weight:bold" />
+			<p:selectBooleanCheckbox
+				value="#{produtoCadastroBean.model.unidadesEmEstoque}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel value="Unidades em ordem:" style="font-weight:bold" />
+			<p:selectBooleanCheckbox
+				value="#{produtoCadastroBean.model.unidadesEmOrdem}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel value="Unidades em estoque:" style="font-weight:bold" />
+			<p:selectBooleanCheckbox
+				value="#{produtoCadastroBean.model.nivelDeReposicao}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel value="Descontinuado:" style="font-weight:bold" />
+			<p:selectOneMenu id="descontinuado"
+				value="#{produtoCadastroBean.model.descontinuado}" style="width:125px">
+				<f:selectItem itemLabel="F" itemValue="F" />
+				<f:selectItem itemLabel="T" itemValue="T" />
+			</p:selectOneMenu>
+		</p:panelGrid>
+
+
+		<p:panelGrid>
+			<h:outputLabel value="Categoria:" style="font-weight:bold" />
+			<p:selectOneMenu id="categoria"
+				value="#{produtoCadastroBean.model.categoria}" style="width:125px">
+				<f:selectItems value="#{produtoCadastro.categorias}" var="cat" itemLabel="#{cat.descricao}" itemValue="cat" />
+			</p:selectOneMenu>
+		</p:panelGrid>
+
+
+		<p:commandButton value="Salvar"
+			actionListener="#{produtoCadastroBean.btnSalvar}" />
+	</h:form>
+</h:body>
+</html>

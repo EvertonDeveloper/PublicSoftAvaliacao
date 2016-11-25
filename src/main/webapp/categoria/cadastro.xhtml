@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Cadastro</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<p:panelGrid>
+			<h:outputLabel for="nomeCategoria" value="Nome categoria:"
+				style="font-weight:bold" />
+			<p:inputText id="nomeCategoria"
+				value="#{categoriaCadastroBean.model.nomeCategoria}" />
+		</p:panelGrid>
+
+		<p:panelGrid>
+			<h:outputLabel for="descricao" value="Descrição"
+				style="font-weight:bold" />
+			<p:inputText id="descricao"
+				value="#{categoriaCadastroBean.model.descricao}" />
+		</p:panelGrid>
+
+		<p:commandButton value="Salvar"
+			actionListener="#{categoriaCadastroBean.btnSalvar}" />
+	</h:form>
+</h:body>
+</html>

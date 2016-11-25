@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="#{request.contextPath}/css/bootstrap.min.css" rel="stylesheet" />
+
+	<style>
+body {
+	padding-top: 70px;
+	padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+	position: static;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.theme-showcase>p>.btn {
+	margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+	width: auto;
+}
+</style>
+
+</h:head>
+
+<h:body>
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#{request.contextPath}">PublicSoft - Avaliação</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<h:form>
+					<ul class="nav navbar-nav">
+						<li><p:commandLink id="produtoLista"
+								action="produtoLista">
+								<h:outputText value="Produtos" />
+							</p:commandLink></li>
+						<li><p:commandLink id="categoriaLista"
+								action="categoriaLista">
+								<h:outputText value="Categorias" />
+							</p:commandLink></li>
+					</ul>
+				</h:form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container theme-showcase" role="main">
+
+		<div class="jumbotron">
+			<h1>Projeto avaliação PublicSoft</h1>
+			<div class="row">
+				<div class="col-md-6">
+					<p>Este projeto foi criado com as seguintes tecnologias:
+					<ul>
+						<li>Java JSF 2.2 com Primefaces</li>
+						<li>JPA/Hibernate</li>
+						<li>Banco de dados MySql</li>
+						<li>Gestor de dependências Maven</li>
+					</ul>
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img src="#{request.contextPath}/img/der.png" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script src="#{request.contextPath}/js/bootstrap.min.js"></script>
+</h:body>
+</html>

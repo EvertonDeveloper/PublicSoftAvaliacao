@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="produtoLista::produto#lista.xhtml"
+    NAME="output" PATH="produto/lista.xhtml"
+    TARGET="rules:produto#lista.xhtml" TITLE="produtoLista" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="produtoCadastro::produto#cadastro.xhtml"
+    NAME="output1" PATH="produto/cadastro.xhtml"
+    TARGET="rules:produto#cadastro.xhtml" TITLE="produtoCadastro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="categoriaLista::categoria#lista.xhtml"
+    NAME="output2" PATH="categoria/lista.xhtml"
+    TARGET="rules:categoria#lista.xhtml" TITLE="categoriaLista" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="categoriaCadastro::categoria#cadastro.xhtml"
+    NAME="output3" PATH="categoria/cadastro.xhtml"
+    TARGET="rules:categoria#cadastro.xhtml" TITLE="categoriaCadastro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:produto#cadastro.xhtml"
+  PATH="produto/cadastro.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:produto#lista.xhtml"
+  PATH="produto/lista.xhtml" SHAPE="240,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:categoria#lista.xhtml"
+  PATH="categoria/lista.xhtml" SHAPE="288,353,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:categoria#cadastro.xhtml"
+  PATH="categoria/cadastro.xhtml" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

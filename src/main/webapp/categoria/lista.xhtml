@@ -1,0 +1,115 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="#{request.contextPath}/css/bootstrap.min.css"
+		rel="stylesheet" />
+
+	<style>
+body {
+	padding-top: 70px;
+	padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+	position: static;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.theme-showcase>p>.btn {
+	margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+	width: auto;
+}
+</style>
+
+</h:head>
+
+<h:body>
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#{request.contextPath}">PublicSoft
+					- Avaliação</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<h:form>
+					<ul class="nav navbar-nav">
+						<li ><p:commandLink id="produtoLista"
+								action="produtoLista">
+								<h:outputText value="Produtos" />
+							</p:commandLink></li>
+						<li class="active"><p:commandLink id="categoriaLista"
+								action="categoriaLista">
+								<h:outputText value="Categorias" />
+							</p:commandLink></li>
+					</ul>
+				</h:form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container theme-showcase" role="main">
+		<h:form id="form">
+			<p:growl id="growl" life="2000" />
+
+			<div class="row">
+				<p:commandButton value="Cadastrar Novo" id="cadastrar"
+					actionListener="#{categoriaBean.btnCadastrar}"
+					styleClass="ui-priority-primary">
+					<p:ajax event="dialogReturn"
+						listener="#{categoriaBean.onModelReturn}" update="form" />
+				</p:commandButton>
+			</div>
+
+			<div class="row">
+				<p:dataTable var="model" value="#{categoriaBean.lista}">
+					<p:column headerText="Id">
+						<h:outputText value="#{model.idCategoria}" />
+					</p:column>
+					
+					<p:column headerText="Nome categoria">
+						<h:outputText value="#{model.nomeCategoria}" />
+					</p:column>
+
+					<p:column headerText="Descrição">
+						<h:outputText value="#{model.descricao}" />
+					</p:column>
+
+					<p:column>
+						<p:commandButton value="Editar" update="form"
+							actionListener="#{categoriaBean.btnEditar(model)}">
+							<p:ajax event="dialogReturn"
+								listener="#{categoriaBean.onModelReturn}" update="form" />
+						</p:commandButton>
+						<p:commandButton value="Deletar" id="deletar" update="form"
+							action="#{categoriaBean.btnDeletar(model)}" />
+					</p:column>
+
+				</p:dataTable>
+			</div>
+		</h:form>
+
+	</div>
+
+	<script src="#{request.contextPath}/js/bootstrap.min.js"></script>
+</h:body>
+</html>

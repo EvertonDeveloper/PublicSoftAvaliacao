@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>produtoLista</from-outcome>
+			<to-view-id>produto/lista.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>produtoCadastro</from-outcome>
+			<to-view-id>produto/cadastro.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>categoriaLista</from-outcome>
+			<to-view-id>categoria/lista.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>categoriaCadastro</from-outcome>
+			<to-view-id>categoria/cadastro.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	</navigation-rule>
+	
+	<application>
+		<action-listener>
+			org.primefaces.application.DialogActionListener
+		</action-listener>
+		<navigation-handler>
+			org.primefaces.application.DialogNavigationHandler
+		</navigation-handler>
+		<view-handler>
+			org.primefaces.application.DialogViewHandler
+		</view-handler>
+	</application>
+
+</faces-config>
